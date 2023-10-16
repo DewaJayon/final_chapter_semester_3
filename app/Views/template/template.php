@@ -21,10 +21,10 @@
         <div class="row">
             <div class="column-12">
                 <ul class="daftar-menu">
-                    <li><a href="">Beranda</a></li>
-                    <li><a href="pages">Daftar Produk</a></li>
-                    <li><a href="pages/tentang-kami.php">Tentang Kami</a></li>
-                    <li><a href="pages/kontak-kami.php">Kontak Kami</a></li>
+                    <li><a href="<?= base_url(); ?>">Beranda</a></li>
+                    <li><a href="<?= base_url(); ?>daftar_produk">Daftar Produk</a></li>
+                    <li><a href="<?= base_url(); ?>tentang_kami">Tentang Kami</a></li>
+                    <li><a href="<?= base_url(); ?>kontak_kami">Kontak Kami</a></li>
                 </ul>
                 <img src="images/banner.jpg" alt="" class="img-responsive">
             </div>
@@ -45,10 +45,10 @@
                 <div class="column-12">
                     <h2 align="center">UNHI Fashion</h2>
                     <ul class="footer-menu">
-                        <li><a href="">Beranda</a></li>
-                        <li><a href="">Daftar Produk</a></li>
-                        <li><a href="">Tentang Kami</a></li>
-                        <li><a href="">Kontak Kami</a></li>
+                        <li><a href="<?= base_url(); ?>">Beranda</a></li>
+                        <li><a href="<?= base_url(); ?>daftar_produk">Daftar Produk</a></li>
+                        <li><a href="<?= base_url(); ?>tentang_kami">Tentang Kami</a></li>
+                        <li><a href="<?= base_url(); ?>kontak_kami">Kontak Kami</a></li>
                     </ul>
                     <div class="text-center">
                         Alamat: Tembau, Jl. Sangalangit, Penatih, Kec. Denpasar Tim., Kota Denpasar, Bali 80238
