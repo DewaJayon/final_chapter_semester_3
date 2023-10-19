@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Tentang_kami extends BaseController
 {
     public function index(): string
     {
-        return view('home');
+        return view('tentang_kami');
     }
 }

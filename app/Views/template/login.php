@@ -15,23 +15,10 @@
 <body>
     <!-- Container Start -->
     <div class="container">
-
-        <!-- Navbar Start -->
-        <div class="row">
-            <div class="column-12">
-                <ul class="daftar-menu">
-                    <li class="active"><a href="<?= base_url('admin'); ?>">Admin</a></li>
-                    <li><a href="<?= base_url('admin/manajemen_produk'); ?>">Manajemen Produk</a></li>
-                    <li><a href="<?= base_url(); ?>" target="_blank">Lihat Website</a></li>
-                    <li><a href="#">Logout</a></li>
-                </ul>
-                <img src="images/banner.jpg" alt="" class="img-responsive">
-            </div>
-        </div>
-        <!-- Container End -->
-
         <!-- content start -->
+
         <?php $this->renderSection('content'); ?>
+
         <!-- content end -->
 
         <!-- Footer Start -->
