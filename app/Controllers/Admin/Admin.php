@@ -10,9 +10,4 @@ class Admin extends BaseController
     {
         return view('admin/home');
     }
-
-    public function manajemen_produk(): string
-    {
-        return view('admin/manajemen_produk');
-    }
 }
