@@ -2,10 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Models\mProduct;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('home');
+        $mProduct = new mProduct();
+        $product_list = $mProduct->findAll();
+
+        $data = [
+            'product_list' => $product_list
+        ];
+
+        return view('home', $data);
     }
 }

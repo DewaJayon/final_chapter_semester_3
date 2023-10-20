@@ -72,7 +72,7 @@
     <!-- Footer End -->
 
     <!-- JS -->
-    <script src="<?= base_url(); ?>js/lightbox.js"></script>
+    <script src="<?= base_url('js/lightbox.js'); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="<?= base_url(); ?>plugins/fancybox/jquery.fancybox.js"></script>
 </body>
