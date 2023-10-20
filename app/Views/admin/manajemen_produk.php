@@ -39,7 +39,7 @@
                         <td><?= $row['product_description'] ?></td>
                         <td>
                             <a href="<?= base_url('admin/edit_produk/' . $row['id_product']) ?>" class="btn btn-success">Edit</a>
-                            <a href="<?= base_url('admin/' . $row['id_product']) ?>" class="btn btn-danger">Hapus</a>
+                            <a href="<?= base_url('admin/produk/delete/' . $row['id_product']) ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                 <?php } ?>

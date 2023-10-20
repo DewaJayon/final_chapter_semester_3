@@ -19,3 +19,6 @@ $routes->get('/admin/tambah_produk', 'Admin\Produk::tambah_produk');
 $routes->post('/admin/tambah_produk', 'Admin\Produk::insert');
 
 $routes->get('/admin/edit_produk/(:any)', 'Admin\Produk::update/$1');
+$routes->post('/admin/edit_produk/(:any)', 'Admin\Produk::update/$1');
+
+$routes->get('/admin/edit_produk/delete/(:any)', 'Admin\Produk::delete/$1');
