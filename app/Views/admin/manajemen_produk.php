@@ -12,7 +12,7 @@
     </br>
     <div class="column-12">
         <div class="text-right">
-            <a href="tambah_produk.php" class="btn btn-success">Tambah Produk</a>
+            <a href="<?= base_url('admin/tambah_produk') ?>" class="btn btn-success">Tambah Produk</a>
         </div>
         </br>
         <table class="table table-bordered">
@@ -38,8 +38,8 @@
                         <td><?= $row['product_price'] ?></td>
                         <td><?= $row['product_description'] ?></td>
                         <td>
-                            <a href="#" class="btn btn-success">Edit</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
+                            <a href="<?= base_url('admin/edit_produk/' . $row['id_product']) ?>" class="btn btn-success">Edit</a>
+                            <a href="<?= base_url('admin/' . $row['id_product']) ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                 <?php } ?>

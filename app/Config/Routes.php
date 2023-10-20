@@ -12,6 +12,10 @@ $routes->get('/kontak_kami', 'Kontak_kami::index');
 
 $routes->get('/login', 'Auth\Login::index');
 
-
 $routes->get('/admin', 'Admin\Admin::index');
-$routes->get('/admin/manajemen_produk', 'Admin\Manajemen_produk::index');
+
+$routes->get('/admin/manajemen_produk', 'Admin\Produk::index');
+$routes->get('/admin/tambah_produk', 'Admin\Produk::tambah_produk');
+$routes->post('/admin/tambah_produk', 'Admin\Produk::insert');
+
+$routes->get('/admin/edit_produk/(:any)', 'Admin\Produk::update/$1');
