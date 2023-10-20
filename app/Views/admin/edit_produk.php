@@ -12,7 +12,7 @@
     </div>
     <div class="column-12">
         <h3>Isi form dibawan untuk Edit Produk :</h3>
-        <form action="<?php base_url('Admin/Produk/edit') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php base_url('admin/produk/update'. $product_row['id_product']) ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Nama Produk</label>
                 <input type="text" class="form-control" name="product_name" value="<?= $product_row['product_name'] ?>" required>

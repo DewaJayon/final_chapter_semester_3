@@ -10,4 +10,10 @@ class Login extends BaseController
     {
         return view('auth/login');
     }
+
+    public function process() {
+
+        $email = 'dewajayon3@gmail.com';
+        $password = 'password';    
+    }
 }

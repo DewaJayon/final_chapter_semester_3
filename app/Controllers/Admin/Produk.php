@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\mProduct;
 use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\Files\File;
 
 class Produk extends BaseController
 {
@@ -38,13 +39,17 @@ class Produk extends BaseController
         $product_name           = $this->request->getVar('product_name');
         $product_price          = $this->request->getVar('product_price');
         $product_description    = $this->request->getVar('product_description');
-        $product_image          = $this->request->getVar('product_image');
+
+        $product_image = $this->request->getFile('product_image');
+        $product_image_name = $product_image->getRandomName();
+
+        $product_image->move('images/', $product_image_name);
 
         $data = [
             'product_name'          => $product_name,
             'product_price'         => $product_price,
             'product_description'   => $product_description,
-            'product_image'         => $product_image
+            'product_image'         => $product_image_name
         ];
 
         $mProduct = new mProduct();
@@ -61,7 +66,7 @@ class Produk extends BaseController
         return redirect(route: 'admin/manajemen_produk');
     }
 
-    public function update($id_product)
+    public function edit($id_product)
     {
         $mProduct = new mProduct();
         $product_row = $mProduct->where('id_product', $id_product)->first();
@@ -71,5 +76,34 @@ class Produk extends BaseController
         ];
 
         return view('admin/edit_produk', $data);
+    }
+
+    public function update($id_product)
+    {
+
+        $product_name           = $this->request->getVar('product_name');
+        $product_price          = $this->request->getVar('product_price');
+        $product_description    = $this->request->getVar('product_description');
+
+        $data = [
+            'product_name'          => $product_name,
+            'product_price'         => $product_price,
+            'product_description'   => $product_description
+        ];
+
+        if(!empty($_FILES['product_image']['names'])) {
+            $product_image = $this->request->getFile('product_image');
+        $product_image_name = $product_image->getRandomName();
+
+        $product_image->move('images/', $product_image_name);
+
+        $data['product_image'] = $product_image_name;
+
+        }
+
+        $mProduct = new mProduct();
+        $mProduct = $mProduct->where('id_product', $id_product)->set($data)->update();
+
+        return redirect('admin/manajemen_produk');
     }
 }

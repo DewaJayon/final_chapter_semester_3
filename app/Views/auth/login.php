@@ -16,14 +16,14 @@
     <br />
     <br />
     <h3>Isi form dibawah untuk Login:</h3>
-    <form action="process/login.php" method="post">
+    <form action="auth/login/process" method="post">
         <div class="form-group">
             <label for="">Email</label>
-            <input type="email" name="email" class="form-control" s>
+            <input type="email" name="email" class="form-control" require>
         </div>
         <div class="form-group">
             <label for="">Password</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password" class="form-control" require>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success">Login</button>
