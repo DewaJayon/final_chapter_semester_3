@@ -6,14 +6,40 @@ use App\Controllers\BaseController;
 
 class Login extends BaseController
 {
+
+    protected $request;
+    protected $session;
+
+    public function __construct()
+    {
+        $request = \Config\Services::request();
+        $session = \Config\Services::session();
+        $this->request = $request;  
+        $this->session = $session;
+        
+    }
     public function index(): string
     {
-        return view('auth/login');
+        Main::check_login();
+        return view('auth/login',[]);
     }
 
     public function process() {
 
-        $email = 'dewajayon3@gmail.com';
-        $password = 'password';    
+        $akun_email = 'dewajayon3@gmail.com';
+        $akun_password = 'password';
+
+        $input_email = $this->request->getVar('email');
+        $input_password = $this->request->getVar('password');
+
+        if($akun_email == $input_email && $akun_password == $input_password) {
+            $this->session->set('login_status', TRUE);
+            $this->session->set('admin_email', $akun_email);
+            return redirect(route:'Admin');
+        } else {
+            return redirect(route:'login');
+        }
+        
+        
     }
 }

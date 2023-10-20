@@ -11,7 +11,9 @@ $routes->get('/tentang_kami', 'Tentang_kami::index');
 $routes->get('/kontak_kami', 'Kontak_kami::index');
 
 $routes->get('/login', 'Auth\Login::index');
-$routes->get('/login', 'Auth\Login::index');
+$routes->post('/auth/login/process', 'Auth\Login::process');
+
+$routes->get('/logout', 'Auth\Logout::process');
 
 $routes->get('/admin', 'Admin\Admin::index');
 $routes->get('/admin/manajemen_produk', 'Admin\Produk::index');
