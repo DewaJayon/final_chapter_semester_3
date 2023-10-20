@@ -27,19 +27,22 @@
             </thead>
             <tbody>
 
-                <tr>
-                    <td>asda</td>
-                    <td>
-                        <img src="<?= base_url(); ?>images/product-1.jpg" alt="" width="150">
-                    </td>
-                    <td>adsada</td>
-                    <td>asdasd</td>
-                    <td>asdas</td>
-                    <td>
-                        <a href="#" class="btn btn-success">Edit</a>
-                        <a href="#" class="btn btn-danger">Hapus</a>
-                    </td>
-                </tr>
+                <?php foreach ($product_list as $key => $row) { ?>
+                    <tr>
+
+                        <td><?= ++$key; ?>.</td>
+                        <td>
+                            <img src="<?= base_url('images/' . $row['product_image']); ?>" alt="" width="150">
+                        </td>
+                        <td><?= $row['product_name'] ?></td>
+                        <td><?= $row['product_price'] ?></td>
+                        <td><?= $row['product_description'] ?></td>
+                        <td>
+                            <a href="#" class="btn btn-success">Edit</a>
+                            <a href="#" class="btn btn-danger">Hapus</a>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
