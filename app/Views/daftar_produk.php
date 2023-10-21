@@ -12,7 +12,7 @@
 <div class="row daftar-produk" style="background-color: #f6f6f6; border-radius: 2%;">
     <?php foreach ($product_list as $key => $row) { ?>
         <div class="column-3">
-            <img src="<?= base_url('images/' . $row['product_image']); ?>" alt="" class="hover-shadow cursor img-responsive">
+            <img src="<?= base_url('images/' . $row['product_image']); ?>" alt="" class="hover-shadow cursor img-responsive" onclick="openModal(<?php echo $row['id_product'] ?>);currentSlide(<?php echo $row['id_product'] ?>)">
             <h2 align="center"><?= $row['product_name'] ?></h2>
             <div class="harga-produk">Rp. <?= $row['product_price'] ?></div>
             <p align="center"><?= $row['product_description'] ?></p>
@@ -24,5 +24,21 @@
         </div>
     <?php } ?>
 </div>
+
+<!--  Modal/Lightbox Start -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <?php foreach ($product_list as $key => $row) { ?>
+            <div class="mySlides">
+                <img src="<?= base_url('images/' . $row['product_image']); ?>" style="width:100%">
+            </div>
+        <?php } ?>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+<!-- Modal/Lightbox End -->
 
 <?= $this->endSection(); ?>
