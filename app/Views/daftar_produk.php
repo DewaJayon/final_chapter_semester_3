@@ -17,7 +17,7 @@
             <div class="harga-produk">Rp. <?= $row['product_price'] ?></div>
             <p align="center"><?= $row['product_description'] ?></p>
             <div class="text-center">
-                <a href="https://api.whatsapp.com/send?phone=6282146121643&text=Saya%20tertarik%20untuk%20membeli%20produk%20asdasda%20segera." target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=6282146121643&text=Saya%20tertarik%20untuk%20membeli%20produk%20<?= $row['product_name'] ?>%20segera." target="_blank">
                     <img src="images/whatsapp-button.png" alt="" width="160">
                 </a>
             </div>
