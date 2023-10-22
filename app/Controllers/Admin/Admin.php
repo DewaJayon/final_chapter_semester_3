@@ -3,11 +3,13 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Libraries\Main;
 
 class Admin extends BaseController
 {
     public function index(): string
     {
-        return view('admin/home');
+        Main::check_admin();
+        return view('admin/home', []);
     }
 }

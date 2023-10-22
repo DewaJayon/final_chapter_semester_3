@@ -12,6 +12,7 @@ $routes->get('/kontak_kami', 'Kontak_kami::index');
 
 $routes->get('/login', 'Auth\Login::index');
 $routes->post('/auth/login/process', 'Auth\Login::process');
+$routes->get('/auth/logout', 'Auth\Logout::process');
 
 $routes->get('/logout', 'Auth\Logout::process');
 

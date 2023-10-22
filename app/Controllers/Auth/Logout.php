@@ -12,15 +12,15 @@ class Logout extends BaseController
 
     public function __construct()
     {
-        $session = \Config\Services::session(); 
+        $session = \Config\Services::session();
         $this->session = $session;
-        
     }
 
-    public function process() {
+    public function process()
+    {
         $this->session->remove('login_status');
         $this->session->remove('admin_email');
 
-        return redirect(route:'login');
+        return redirect('login');
     }
 }

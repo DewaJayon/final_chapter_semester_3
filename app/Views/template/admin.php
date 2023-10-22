@@ -23,7 +23,7 @@
                     <li class="active"><a href="<?= base_url('admin'); ?>">Admin</a></li>
                     <li><a href="<?= base_url('admin/manajemen_produk'); ?>">Manajemen Produk</a></li>
                     <li><a href="<?= base_url(); ?>" target="_blank">Lihat Website</a></li>
-                    <li><a href="<?php base_url('auth/logout/process') ?>">Logout</a></li>
+                    <li><a href="<?= base_url() ?>auth/logout">Logout</a></li>
                 </ul>
                 <img src="images/banner.jpg" alt="" class="img-responsive">
             </div>

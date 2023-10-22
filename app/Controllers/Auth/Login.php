@@ -3,6 +3,7 @@
 namespace App\Controllers\Auth;
 
 use App\Controllers\BaseController;
+use App\Libraries\Main;
 
 class Login extends BaseController
 {
@@ -14,17 +15,17 @@ class Login extends BaseController
     {
         $request = \Config\Services::request();
         $session = \Config\Services::session();
-        $this->request = $request;  
+        $this->request = $request;
         $this->session = $session;
-        
     }
     public function index(): string
     {
         Main::check_login();
-        return view('auth/login',[]);
+        return view('auth/login',);
     }
 
-    public function process() {
+    public function process()
+    {
 
         $akun_email = 'dewajayon3@gmail.com';
         $akun_password = 'password';
@@ -32,14 +33,12 @@ class Login extends BaseController
         $input_email = $this->request->getVar('email');
         $input_password = $this->request->getVar('password');
 
-        if($akun_email == $input_email && $akun_password == $input_password) {
+        if ($akun_email == $input_email && $akun_password == $input_password) {
             $this->session->set('login_status', TRUE);
             $this->session->set('admin_email', $akun_email);
-            return redirect(route:'Admin');
+            return redirect('admin');
         } else {
-            return redirect(route:'login');
+            return redirect('login');
         }
-        
-        
     }
 }
